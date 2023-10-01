@@ -1,0 +1,75 @@
+﻿@page
+@model ShipmentTracker.Pages.Customers.SearchModel
+
+@{
+    ViewData["Title"] = "Search";
+}
+
+<h1>Search</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+
+<div class="row">
+    <div class="col">
+        <form action="" method="get" class="form-inline">
+            <input asp-for="Query" class="form-control mr-sm-2 mb-2" placeholder="Search Customer Name" />
+            <button type="submit" class="btn btn-primary mb-2">Search</button>
+        </form>
+    </div>
+</div>
+
+@if (Model.SearchCompleted)
+{
+    if (Model.Customer.Any())
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Customer[0].CustomerName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Customer[0].PhoneNumber)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Customer[0].Email)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+        @foreach (var item in Model.Customer) {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CustomerName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PhoneNumber)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    <td>
+                        <a asp-page="./Edit" asp-route-id="@item.CustomerId">Edit</a> |
+                        <a asp-page="./Details" asp-route-id="@item.CustomerId">Details</a> |
+                        <a asp-page="./Delete" asp-route-id="@item.CustomerId">Delete</a>
+                    </td>
+                </tr>
+        }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <div class="row">
+            <div class="col">
+                <div class="alert alert-info">
+                    No results match your term <strong>@Model.Query</strong>
+                </div>
+            </div>
+        </div>
+    }
+}
+

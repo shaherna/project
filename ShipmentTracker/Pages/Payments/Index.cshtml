@@ -1,0 +1,66 @@
+﻿@page
+@model ShipmentTracker.Pages.Payments.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>List of Customer Payment Details</h1>
+
+<p>
+    <a asp-page="Create" class="btn btn-success">Create New</a>
+</p>
+<table class="table table-dark table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Payment[0].Amount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Payment[0].TransactionNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Payment[0].PaymentDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Payment[0].PaymentMode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Payment[0].Customer)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Payment[0].Shipment)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Payment) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Amount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TransactionNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PaymentDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PaymentMode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Customer.CustomerName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Shipment.ShipmentNumber)
+            </td>
+            <td>
+                    <a asp-page="./Edit" asp-route-id="@item.PaymentId"class="btn btn-secondary">Edit</a> |
+                    <a asp-page="./Details" asp-route-id="@item.PaymentId" class="btn btn-secondary">Details</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.PaymentId" class="btn btn-secondary">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

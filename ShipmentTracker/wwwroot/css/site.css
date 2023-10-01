@@ -1,0 +1,92 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+main form:not(.deleteForm) {
+    background: linear-gradient(#e66465, #9198e5);
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.form-group input, .form-group select, .form-floating input {
+    padding: 10px;
+    border: 1px solid black;
+}
+.form-group, .form-floating {
+    margin-bottom: 15px;
+}
+.form-group label {
+    font-size:20px;
+    margin-bottom:10px;
+    font-weight: 500;
+}
+
+.form-group select {
+    width: 100%;
+}
+
+    .form-group .btn {
+        background-color: black;
+        border-color: black;
+        width: 100%;
+        padding: 10px;
+        color: white;
+    }
+
+.accordion-button, .accordion-button:not(.collapsed) {
+    background-color: #b1f2ff;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.sub-pages-header {
+    
+    height: 400px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+    .sub-pages-header h1 {
+        width: 100%;
+        background-color: rgba(0,0,0,0.4);
+        color: white;
+    }
+
+.red-color {
+    color: #b1f2ff;
+}
+.normal-text {
+    color: #adadad;
+    font-weight:500;
+}
+
+#account a {
+    color:black;
+}
+
+#account button, #registerForm button {
+    background-color: black;
+    color: white;
+}
+

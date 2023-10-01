@@ -1,0 +1,110 @@
+﻿@page
+@model ShipmentTracker.Pages.Customers.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Customer Details</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Customer.CustomerName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Customer.CustomerName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Customer.PhoneNumber)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Customer.PhoneNumber)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Customer.Email)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Customer.Email)
+        </dd>
+    </dl>
+</div>    
+
+@if (Model.Customer.Payments.Any())
+{
+   <div class="accordion-item">
+    <h2 class="accordion-header" id="headingTwo">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseOne">
+        Your Payments      </button>
+    </h2>
+    <div id="collapseTwo" class="accordion-collapse collapse show" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+	<table class="table">
+    <table class="table table-bordered">
+
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Customer.Payments[0].Amount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customer.Payments[0].TransactionNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customer.Payments[0].PaymentDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customer.Payments[0].PaymentMode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customer.Payments[0].Customer)
+            </th>
+           @* <th>
+                @Html.DisplayNameFor(model => model.Customer.Payments[0].Shipment)
+            </th>*@
+      
+        </tr>
+    </thead>
+    <tbody>
+
+@foreach (var item in Model.Customer.Payments) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Amount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TransactionNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PaymentDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PaymentMode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Customer.CustomerName)
+            </td>
+           @* <td>
+                @Html.DisplayFor(modelItem => item.Shipment.ShipmentNumber)
+            </td>*@
+
+             </tr>}
+		</tbody>
+	</table>
+    </div>
+      </div>
+    </div>
+
+}
+
+else
+{
+    <div class="alert alert-warning">No Payments exist</div>
+}
+
+<br />
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Customer?.CustomerId" class="btn btn-dark mt-3">Edit</a> |
+    <a asp-page="./Index" class="btn btn-dark mt-3">Go Back</a>
+</div>

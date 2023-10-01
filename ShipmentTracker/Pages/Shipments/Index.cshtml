@@ -1,0 +1,84 @@
+﻿@page
+@model ShipmentTracker.Pages.Shipments.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>List of Shipments</h1>
+
+<p>
+    <a asp-page="Create" class="btn btn-success">Create New</a>
+</p>
+<table class="table table-dark table-hover table-responsive">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Shipment[0].ShipmentStartDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Shipment[0].ShipmentType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Shipment[0].ShipmentNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Shipment[0].PickupLocation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Shipment[0].Destination)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Shipment[0].Customer)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Shipment[0].PaymentId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Shipment[0].DeliveryTrackingId)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.Shipment[0].Employee)
+            </th>*@
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Shipment) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShipmentStartDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShipmentType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShipmentNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PickupLocation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Destination)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Customer.CustomerName)
+            </td>
+            <td style="width:50px;">
+                @Html.DisplayFor(modelItem => item.PaymentId)
+            </td>
+                <td style="width:50px;">
+                @Html.DisplayFor(modelItem => item.DeliveryTrackingId)
+            </td>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.Employee.Email)
+            </td>*@
+            <td>
+                    <a asp-page="./Edit" asp-route-id="@item.ShipmentId" class="btn btn-secondary">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ShipmentId" class="btn btn-secondary">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ShipmentId" class="btn btn-secondary">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

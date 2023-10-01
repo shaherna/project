@@ -1,0 +1,48 @@
+﻿@page
+@model ShipmentTracker.Pages.Employees.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>List of Employees</h1>
+
+<p>
+    <a asp-page="Create" class="btn btn-success">Create New</a>
+</p>
+<table class="table table-dark table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Employee[0].EmployeeName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Employee[0].Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Employee[0].Contact)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Employee) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmployeeName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Contact)
+            </td>
+            <td>
+                    <a asp-page="./Edit" asp-route-id="@item.EmployeeId" class="btn btn-secondary">Edit</a> |
+                    <a asp-page="./Details" asp-route-id="@item.EmployeeId" class="btn btn-secondary">Details</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.EmployeeId" class="btn btn-secondary">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

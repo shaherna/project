@@ -1,0 +1,71 @@
+﻿@page
+@model ShipmentTracker.Pages.Shipments.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>New Shipment</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Shipment.ShipmentStartDate" class="control-label"></label>
+                <input asp-for="Shipment.ShipmentStartDate" class="form-control" />
+                <span asp-validation-for="Shipment.ShipmentStartDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Shipment.ShipmentType" class="control-label"></label>
+                <input asp-for="Shipment.ShipmentType" class="form-control" />
+                <span asp-validation-for="Shipment.ShipmentType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Shipment.ShipmentNumber" class="control-label"></label>
+                <input asp-for="Shipment.ShipmentNumber" class="form-control" />
+                <span asp-validation-for="Shipment.ShipmentNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Shipment.PickupLocation" class="control-label"></label>
+                <input asp-for="Shipment.PickupLocation" class="form-control" />
+                <span asp-validation-for="Shipment.PickupLocation" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Shipment.Destination" class="control-label"></label>
+                <input asp-for="Shipment.Destination" class="form-control" />
+                <span asp-validation-for="Shipment.Destination" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Shipment.CustomerId" class="control-label"></label>
+                <select asp-for="Shipment.CustomerId" class ="form-control" asp-items="ViewBag.CustomerId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Shipment.PaymentId" class="control-label"></label>
+                <input asp-for="Shipment.PaymentId" class="form-control" />
+                <span asp-validation-for="Shipment.PaymentId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Shipment.DeliveryTrackingId" class="control-label"></label>
+                <input asp-for="Shipment.DeliveryTrackingId" class="form-control" />
+                <span asp-validation-for="Shipment.DeliveryTrackingId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Shipment.EmployeeId" class="control-label"></label>
+                <select asp-for="Shipment.EmployeeId" class ="form-control" asp-items="ViewBag.EmployeeId"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index" class="btn btn-dark mt-3">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

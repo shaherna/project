@@ -1,0 +1,49 @@
+﻿@page
+@model ShipmentTracker.Pages.StatisticsModel
+
+@{
+}
+
+<style> 
+    .carousel-caption h2
+
+    {
+        color: white; 
+    }
+
+    .carousel-caption p
+    {
+        color: white;
+
+    }
+
+    .badge {
+        color: black;
+        font-size: 20px;
+    }
+
+    .list-group {
+        background-color: black;
+        color: white;
+    }
+
+
+    
+
+</style>
+<h4 style="color: #b1f2ff; font-size:2rem; padding: 10px;">Platform Statistics</h4>
+
+<ul >
+    <li>
+        <h2>@Model.TotalShipments</h2>
+        <h3>Total Shipments</h3>
+    </li>
+    <li>
+        <h2>@Model.TotalDeliveryTrackings</h2>
+        <h3>Total Delivery Trackings</h3>
+    </li>
+    <li>
+        <h2>@Model.TotalCustomers</h2>
+        <h3>Total Customers</h3>
+    </li>
+</ul>

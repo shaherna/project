@@ -1,0 +1,253 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<style>
+    .hero-container {
+        height: 600px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .hero-container .row {
+            padding: 0 20px;
+    }
+
+    .discount-add-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .mb-50 {
+        margin-bottom: 50px;
+    }
+
+    .item-container{
+        color: white;
+    }
+
+    .track-order {
+        background-color: rgba(0,0,0,0.4);
+        border-radius: 5px;
+        padding: 20px;
+    }
+    .track-order a, .discount-offer a {
+            background-color: #b1f2ff;
+            border-color: #b1f2ff;
+            width:100%;
+            padding:10px;
+    }
+
+    .discount-offer h1 {
+        color: #b1f2ff;
+        font-weight:800;
+    }
+
+    .discount-offer p {
+        color: #b1f2ff;
+        line-height:30px;
+        font-weight:500;
+    }
+
+    .discount-offer {
+        display:flex;
+        flex-direction:column;
+    }
+
+    .track-order input {
+        margin: 20px 0;
+        padding:10px;
+    }
+    .advantages-list-content {
+        text-align:center;
+        color: #b1f2ff;
+        font-weight:500;
+        font-size:30px;
+    }
+
+    .service {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height:300px;
+        border: 1px solid red;
+        position:relative;
+        margin-bottom:20px;
+    }
+   
+
+    .service-link {
+        padding:10px;
+        text-align:center;
+        background-color: #b1f2ff;
+        color: white;
+        font-weight:500;
+        font-size:20px;
+        text-decoration:none;
+        position:absolute;
+        bottom:0;
+        left:0;
+    }
+
+    .heading {
+        padding: 40px 0;
+        border-top: 1px solid rgba(0,0,0,0.4);
+    }
+
+</style>
+<div class="hero-container mb-50">
+    <div class="container item-container">
+        <div class="row">
+        <div class="heading-text justify-content-center col-sm-6">
+            <h1>Reliable Trucking and Transportation Services.</h1>
+            <h4>Logistic Solutions for Your Successful Business</h4>
+        </div>
+        <div class="col-sm-2"></div>
+        <div class="track-order justify-content-center col-sm-4">
+            <h2>Track Your Order</h2>
+                    <a class="btn btn-primary mb-3" asp-area="" asp-page="/DeliveryTrackings/Search">Track</a>
+        </div>
+        </div>
+    </div>
+    <div class="container item-container">
+    <div class="row">
+       
+        <div class="col-sm-5 justify-content-center discount-offer">
+            <h1 class="color-red">Save Upto 40% </h1>
+            <p>
+                Send more without spending more when you ship with promo code HAPPY.
+            </p>
+            <a class="btn btn-primary mb-3" asp-area="" asp-page="/Shipments/Create">Ship Now</a>
+        </div>
+    </div>
+</div>
+</div>
+
+
+<div class="container">
+    <div class="row">
+        <div class="moto-cell col-sm-12" data-container="container">
+            <div class="moto-widget moto-widget-row row-fixed moto-spacing-top-auto moto-spacing-right-auto moto-spacing-bottom-auto moto-spacing-left-auto"
+                 data-grid-type="sm" data-widget="row" data-spacing="aaaa" style="" data-bg-position="left top">
+                <div class="container-fluid heading">
+                    <div class="row" data-container="container">
+                        <div class="moto-widget moto-widget-row__column moto-cell col-sm-12 moto-spacing-top-auto moto-spacing-right-auto moto-spacing-bottom-auto moto-spacing-left-auto"
+                             style="" data-widget="row.column" data-container="container" data-spacing="aaaa"
+                             data-bg-position="left top">
+                            <div class="moto-widget moto-widget-text moto-preset-default moto-spacing-top-auto moto-spacing-right-auto moto-spacing-bottom-auto moto-spacing-left-auto"
+                                 data-widget="text" data-preset="default" data-spacing="aaaa" data-animation="">
+                                <div class="advantages-list-content moto-widget-text-editable">
+                                    <span class="moto-text_system_7" style="text-align: center;"><h2>Our Advantages</h2></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="moto-widget moto-widget-row row-fixed moto-spacing-top-auto moto-spacing-right-auto moto-spacing-bottom-auto moto-spacing-left-auto"
+                 data-grid-type="sm" data-widget="row" data-spacing="aaaa" style="" data-bg-position="left top">
+                <div class="container">
+                    <div class="row" data-container="container">
+                        <div class="moto-widget moto-widget-row__column moto-cell col-sm-3 moto-spacing-top-auto moto-spacing-right-auto moto-spacing-bottom-auto moto-spacing-left-auto"
+                             style="" data-widget="row.column" data-container="container" data-spacing="aaaa"
+                             data-bg-position="left top">
+                            <div class="moto-widget moto-widget-text moto-preset-default moto-spacing-top-medium moto-spacing-right-auto moto-spacing-bottom-auto moto-spacing-left-auto"
+                                 data-widget="text" data-preset="default" data-spacing="maaa" data-animation="">
+                                <div class="advantages-list-content moto-widget-text-editable">
+                                   <p class="moto-text_system_8" style="text-align: center;">
+                                        <a href="#" target="_self"
+                                           data-action="url" class="moto-link">Fast Delivery</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="moto-widget moto-widget-text moto-preset-default moto-spacing-top-auto moto-spacing-right-auto moto-spacing-bottom-auto moto-spacing-left-auto"
+                                 data-widget="text" data-preset="default" data-spacing="aaaa" data-animation="">
+                                <div class="moto-widget-text-editable">
+                                    <p class="moto-text_normal" style="text-align: center;">
+                                        Cooperating with TransLogic
+                                        you are guaranteed to have your cargo delivered fast and secure.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="moto-widget moto-widget-row__column moto-cell col-sm-3 moto-spacing-top-auto moto-spacing-right-auto moto-spacing-bottom-auto moto-spacing-left-auto"
+                             style="" data-widget="row.column" data-container="container" data-spacing="aaaa"
+                             data-bg-position="left top">
+                            <div class="moto-widget moto-widget-text moto-preset-default moto-spacing-top-medium moto-spacing-right-auto moto-spacing-bottom-auto moto-spacing-left-auto"
+                                 data-widget="text" data-preset="default" data-spacing="maaa" data-animation="">
+                                <div class="advantages-list-content moto-widget-text-editable">
+                                  
+                                    <p class="moto-text_system_8" style="text-align: center;">
+                                        <a target="_self"
+                                           data-action="url" class="moto-link" href="#">24/7 Support</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="moto-widget moto-widget-text moto-preset-default moto-spacing-top-auto moto-spacing-right-auto moto-spacing-bottom-auto moto-spacing-left-auto"
+                                 data-widget="text" data-preset="default" data-spacing="aaaa" data-animation="">
+                                <div class="moto-widget-text-editable">
+                                    <p class="moto-text_normal" style="text-align: center;">
+                                        We provide you with 24/7
+                                        support, which gives you an opportunity to track your shipment on its way.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="moto-widget moto-widget-row__column moto-cell col-sm-3 moto-spacing-top-auto moto-spacing-right-auto moto-spacing-bottom-auto moto-spacing-left-auto"
+                             style="" data-widget="row.column" data-container="container" data-spacing="aaaa"
+                             data-bg-position="left top">
+                            <div class="moto-widget moto-widget-text moto-preset-default moto-spacing-top-medium moto-spacing-right-auto moto-spacing-bottom-auto moto-spacing-left-auto"
+                                 data-widget="text" data-preset="default" data-spacing="maaa" data-animation="">
+                                <div class="advantages-list-content moto-widget-text-editable">                                   
+                                    <p class="moto-text_system_8" style="text-align: center;">
+                                        <a href="#" target="_self"
+                                           data-action="url" class="moto-link">Secured Services</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="moto-widget moto-widget-text moto-preset-default moto-spacing-top-auto moto-spacing-right-auto moto-spacing-bottom-auto moto-spacing-left-auto"
+                                 data-widget="text" data-preset="default" data-spacing="aaaa" data-animation="">
+                                <div class=" moto-widget-text-editable">
+                                    <p class="moto-text_normal" style="text-align: center;">
+                                        We provide all our clients
+                                        with professional transportation services on the highest security level.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="moto-widget moto-widget-row__column moto-cell col-sm-3 moto-spacing-top-auto moto-spacing-right-auto moto-spacing-bottom-auto moto-spacing-left-auto"
+                             style="" data-widget="row.column" data-container="container" data-spacing="aaaa"
+                             data-bg-position="left top">
+                            <div class="moto-widget moto-widget-text moto-preset-default moto-spacing-top-medium moto-spacing-right-auto moto-spacing-bottom-auto moto-spacing-left-auto"
+                                 data-widget="text" data-preset="default" data-spacing="maaa" data-animation="">
+                                <div class="advantages-list-content moto-widget-text-editable">                                   
+                                    <p class="moto-text_system_8" style="text-align: center;">
+                                        <a href="#" target="_self"
+                                           data-action="url" class="moto-link">Affordable Prices</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="moto-widget moto-widget-text moto-preset-default moto-spacing-top-auto moto-spacing-right-auto moto-spacing-bottom-auto moto-spacing-left-auto"
+                                 data-widget="text" data-preset="default" data-spacing="aaaa" data-animation="">
+                                <div class="moto-widget-text-editable">
+                                    <p class="moto-text_normal" style="text-align: center;">
+                                        We have the lowest prices on
+                                        the market and offer affordable solutions tailored to your business.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
